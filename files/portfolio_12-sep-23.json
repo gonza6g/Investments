@@ -1,0 +1,341 @@
+portfolio = {
+    "pais": "argentina",
+    "activos": [
+        {
+            "cantidad": 74.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 164.00000000,
+            "variacionDiaria": 0.78,
+            "ultimoPrecio": 20944.00000000,
+            "ppc": 11192.500,
+            "gananciaPorcentaje": 87.12,
+            "gananciaDinero": 7216.11,
+            "valorizado": 15498.560000000000,
+            "titulo": {
+                "simbolo": "AL30",
+                "descripcion": "Bono Rep. Argentina Usd Step Up 2030",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "TitulosPublicos",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 14.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": -8.50000000,
+            "variacionDiaria": -1.15,
+            "ultimoPrecio": 725.00000000,
+            "ppc": 698.634,
+            "gananciaPorcentaje": 3.77,
+            "gananciaDinero": 369.13,
+            "valorizado": 10150.000000000000,
+            "titulo": {
+                "simbolo": "AMZN",
+                "descripcion": "Amazon",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 5.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 23.00000000,
+            "variacionDiaria": 1.04,
+            "ultimoPrecio": 2216.50000000,
+            "ppc": 2130.000,
+            "gananciaPorcentaje": 4.06,
+            "gananciaDinero": 432.50,
+            "valorizado": 11082.500000000000,
+            "titulo": {
+                "simbolo": "BBD",
+                "descripcion": "Banco Bradesco S.A.",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 1.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 307.00000000,
+            "variacionDiaria": 3.07,
+            "ultimoPrecio": 10275.50000000,
+            "ppc": 10186.000,
+            "gananciaPorcentaje": 0.87,
+            "gananciaDinero": 89.50,
+            "valorizado": 10275.500000000000,
+            "titulo": {
+                "simbolo": "C",
+                "descripcion": "Citigroup",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 4.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 71.00000000,
+            "variacionDiaria": 1.40,
+            "ultimoPrecio": 5133.00000000,
+            "ppc": 5241.250,
+            "gananciaPorcentaje": -2.06,
+            "gananciaDinero": -433.00,
+            "valorizado": 20532.000000000000,
+            "titulo": {
+                "simbolo": "DISN",
+                "descripcion": "The Walt Disney Company",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 0.2000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 1.65000000,
+            "variacionDiaria": 3.61,
+            "ultimoPrecio": 47.35000000,
+            "ppc": 35.400,
+            "gananciaPorcentaje": 33.75,
+            "gananciaDinero": 2.39,
+            "valorizado": 9.470000000000,
+            "titulo": {
+                "simbolo": "FERR",
+                "descripcion": "Ferrum",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "ACCIONES",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 1.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": -291.00000000,
+            "variacionDiaria": -1.33,
+            "ultimoPrecio": 21544.00000000,
+            "ppc": 20951.208,
+            "gananciaPorcentaje": 2.82,
+            "gananciaDinero": 592.79,
+            "valorizado": 21544.000000000000,
+            "titulo": {
+                "simbolo": "IBM",
+                "descripcion": "Ibm",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 2.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 85.50000000,
+            "variacionDiaria": 1.07,
+            "ultimoPrecio": 8051.00000000,
+            "ppc": 5232.000,
+            "gananciaPorcentaje": 53.88,
+            "gananciaDinero": 5638.00,
+            "valorizado": 16102.000000000000,
+            "titulo": {
+                "simbolo": "JNJ",
+                "descripcion": "Johnson & Johnson",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 2.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 88.00000000,
+            "variacionDiaria": 1.07,
+            "ultimoPrecio": 8284.50000000,
+            "ppc": 8150.000,
+            "gananciaPorcentaje": 1.65,
+            "gananciaDinero": 269.00,
+            "valorizado": 16569.000000000000,
+            "titulo": {
+                "simbolo": "MO",
+                "descripcion": "Altria Group",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 2.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": -129.50000000,
+            "variacionDiaria": -1.55,
+            "ultimoPrecio": 8184.00000000,
+            "ppc": 5969.500,
+            "gananciaPorcentaje": 37.09,
+            "gananciaDinero": 4429.00,
+            "valorizado": 16368.000000000000,
+            "titulo": {
+                "simbolo": "MSFT",
+                "descripcion": "Microsoft",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 4.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 11.50000000,
+            "variacionDiaria": 0.19,
+            "ultimoPrecio": 5945.00000000,
+            "ppc": 4867.693,
+            "gananciaPorcentaje": 22.13,
+            "gananciaDinero": 4309.23,
+            "valorizado": 23780.000000000000,
+            "titulo": {
+                "simbolo": "NKE",
+                "descripcion": "Nike",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 3.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": -5.00000000,
+            "variacionDiaria": -0.03,
+            "ultimoPrecio": 13840.00000000,
+            "ppc": 11585.549,
+            "gananciaPorcentaje": 19.45,
+            "gananciaDinero": 6763.35,
+            "valorizado": 41520.000000000000,
+            "titulo": {
+                "simbolo": "NVDA",
+                "descripcion": "Nvidia",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 7.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": -38.50000000,
+            "variacionDiaria": -0.23,
+            "ultimoPrecio": 16472.00000000,
+            "ppc": 16314.558,
+            "gananciaPorcentaje": 0.96,
+            "gananciaDinero": 1102.09,
+            "valorizado": 115304.000000000000,
+            "titulo": {
+                "simbolo": "SPY",
+                "descripcion": "Etf Spdr S&P 500",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 4.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 6.00000000,
+            "variacionDiaria": 0.16,
+            "ultimoPrecio": 3571.00000000,
+            "ppc": 3651.750,
+            "gananciaPorcentaje": -2.21,
+            "gananciaDinero": -323.00,
+            "valorizado": 14284.000000000000,
+            "titulo": {
+                "simbolo": "T",
+                "descripcion": "At&T",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 1.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 134.50000000,
+            "variacionDiaria": 2.55,
+            "ultimoPrecio": 5400.00000000,
+            "ppc": 5546.500,
+            "gananciaPorcentaje": -2.64,
+            "gananciaDinero": -146.50,
+            "valorizado": 5400.000000000000,
+            "titulo": {
+                "simbolo": "WBA",
+                "descripcion": "Walgreens Boots Alliance Inc.",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "CEDEARS",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        },
+        {
+            "cantidad": 179.0000,
+            "comprometido": 0.0000,
+            "puntosVariacion": 0.15000000,
+            "variacionDiaria": 0.11,
+            "ultimoPrecio": 127.35000000,
+            "ppc": 0.000,
+            "gananciaPorcentaje": 0.0,
+            "gananciaDinero": 0.0,
+            "valorizado": 227.956500000000,
+            "titulo": {
+                "simbolo": "X23N3",
+                "descripcion": "Letra Rep Arg Ajust. Cer Dto Vt. 23/11/23 $",
+                "pais": "argentina",
+                "mercado": "bcba",
+                "tipo": "Letras",
+                "plazo": "t2",
+                "moneda": "peso_Argentino"
+            },
+            "parking": null
+        }
+    ]
+}
