@@ -1,0 +1,126 @@
+.portfolio-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  background-color: #111111;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.portfolio-table th,
+.portfolio-table td {
+  padding: 16px;
+  text-align: right;
+  border-bottom: 1px solid #222;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.portfolio-table th:first-child,
+.portfolio-table td:first-child {
+  text-align: left;
+  padding-left: 24px;
+}
+
+.portfolio-table th {
+  background-color: #111111;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-right: 25px;
+}
+
+.portfolio-table th:hover {
+  color: #fff;
+}
+
+.portfolio-table th::after {
+  content: attr(data-icon);
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.portfolio-table th:hover::after {
+  opacity: 1;
+}
+
+.asset-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.symbol {
+  color: #888;
+  font-weight: 500;
+}
+
+.price-value {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  color: #fff;
+}
+
+.holdings {
+  color: #888;
+}
+
+.positive-change {
+  color: #16c784;
+  font-weight: 500;
+}
+
+.negative-change {
+  color: #ea3943;
+  font-weight: 500;
+}
+
+.portfolio-table tr:hover {
+  background-color: #1a1a1a;
+}
+
+.portfolio-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.portfolio-table tbody tr:nth-child(even) {
+  background-color: #161616;
+}
+
+.no-gains-message {
+  color: #888;
+  text-align: center;
+  padding: 40px;
+  background: #111111;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .portfolio-table {
+    font-size: 13px;
+  }
+  
+  .portfolio-table th,
+  .portfolio-table td {
+    padding: 12px 8px;
+  }
+}
+
+/* Optional: Add a subtle glow effect to the table */
+.portfolio-table {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+} 
