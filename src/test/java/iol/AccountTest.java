@@ -1,5 +1,6 @@
 package iol;
 
+import org.json.JSONException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +8,7 @@ import java.io.IOException;
 
 public class AccountTest {
     @Test
-    public void getAccountStatus() throws IOException {
+    public void getAccountStatus() throws IOException, JSONException {
         String username = "username";
         String password = "password";
 
@@ -24,7 +25,7 @@ public class AccountTest {
     }
 
     @Test
-    public void getTransactions() throws IOException {
+    public void getTransactions() throws IOException, JSONException {
         String username = "username";
         String password = "password";
 

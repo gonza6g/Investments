@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PortfolioView.css';
 
-function GainsView({ portfolio }) {
+function GainsView({ portfolio, totalGains, lastUpdate }) {
   const [sortConfig, setSortConfig] = useState({
     key: 'gains',
     direction: 'descending'
@@ -55,48 +55,56 @@ function GainsView({ portfolio }) {
   }
 
   return (
-    <table className="portfolio-table">
-      <thead>
-        <tr>
-          <th onClick={() => sortData('symbol')}>
-            Symbol {getSortIcon('symbol')}
-          </th>
-          <th onClick={() => sortData('name')}>
-            Name {getSortIcon('name')}
-          </th>
-          <th onClick={() => sortData('country')}>
-            Country {getSortIcon('country')}
-          </th>
-          <th onClick={() => sortData('industry')}>
-            Industry {getSortIcon('industry')}
-          </th>
-          <th onClick={() => sortData('holdings')}>
-            Holdings {getSortIcon('holdings')}
-          </th>
-          <th onClick={() => sortData('gains')}>
-            Gains ($) {getSortIcon('gains')}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {sortedData.map((asset, index) => (
-          <tr key={index}>
-            <td className="symbol">{asset.symbol}</td>
-            <td>
-              <div className="asset-name">{asset.name}</div>
-            </td>
-            <td>{asset.country}</td>
-            <td>{asset.industry}</td>
-            <td className="holdings">
-              {asset.holdings.toLocaleString('en-US', { minimumFractionDigits: 2 })}
-            </td>
-            <td className="positive-change">
-              ${asset.gains.toLocaleString('en-US', { minimumFractionDigits: 2 })}
-            </td>
+    <>
+      <div className="last-update">
+        Last Updated: {lastUpdate || 'Never updated'}
+      </div>
+      <div className="total-amount">
+        Total Gains: <span className="value-positive">${totalGains.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
+      </div>
+      <table className="portfolio-table">
+        <thead>
+          <tr>
+            <th onClick={() => sortData('symbol')}>
+              Symbol {getSortIcon('symbol')}
+            </th>
+            <th onClick={() => sortData('name')}>
+              Name {getSortIcon('name')}
+            </th>
+            <th onClick={() => sortData('country')}>
+              Country {getSortIcon('country')}
+            </th>
+            <th onClick={() => sortData('industry')}>
+              Industry {getSortIcon('industry')}
+            </th>
+            <th onClick={() => sortData('holdings')}>
+              Holdings {getSortIcon('holdings')}
+            </th>
+            <th onClick={() => sortData('gains')}>
+              Gains ($) {getSortIcon('gains')}
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {sortedData.map((asset, index) => (
+            <tr key={index}>
+              <td className="symbol">{asset.symbol}</td>
+              <td>
+                <div className="asset-name">{asset.name}</div>
+              </td>
+              <td>{asset.country}</td>
+              <td>{asset.industry}</td>
+              <td className="holdings">
+                {asset.holdings.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+              </td>
+              <td className={`price-value ${asset.gains >= 0 ? 'value-positive' : 'value-negative'}`}>
+                ${Math.abs(asset.gains).toLocaleString('en-US', { minimumFractionDigits: 2 })}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 }
 

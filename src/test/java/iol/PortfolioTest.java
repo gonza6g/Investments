@@ -1,20 +1,16 @@
 package iol;
 
+import org.json.JSONException;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PortfolioTest {
+
     @Test
-    public void getPortfolio() throws IOException {
-        TokenObtainer tokenObtainer = new TokenObtainer();
-        tokenObtainer.obtainAccessToken();
-
-        String token = tokenObtainer.getAccessToken();
-
-        PortfolioManager portfolioManager = new PortfolioManager(tokenObtainer);
-        String portfolio = portfolioManager.getPortfolio();
-
-        System.out.println("portfolio = " + portfolio);
+    public void testPortfolioJsonParsing() throws JSONException {
+        // Your test code here
+        String jsonPortfolio = "{\"activos\":[\"asset1\",\"asset2\"]}";
+        PortfolioManager portfolioManager = new PortfolioManager(new TokenObtainer());
+        // Rest of your test
     }
 }

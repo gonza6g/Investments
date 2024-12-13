@@ -8,6 +8,7 @@ iol/controller/PortfolioController.class
 iol/PostgreSqlDao.class
 iol/Application.class
 iol/JdbcConnection.class
+iol/PortfolioUpdateService.class
 iol/api/AssetApi.class
 iol/AssetManager.class
 iol/PortfolioManager.class

@@ -2,19 +2,20 @@ package iol;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONException;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
 public class OperatorTest {
     @Test
-    public void sellStock() throws IOException {
+    public void sellStock() throws IOException, JSONException {
         TokenObtainer tokenObtainer = new TokenObtainer();
         tokenObtainer.obtainAccessToken();
         String token = tokenObtainer.getAccessToken();
 
         PortfolioManager portfolioManager = new PortfolioManager(tokenObtainer);
-        String portfolioString =  portfolioManager.getPortfolio();
+        String portfolioString = portfolioManager.getPortfolio();
 
         String market = "bCBA";
         String symbol = "PAMP";
@@ -43,5 +44,4 @@ public class OperatorTest {
         }
         return null;
     }
-
 }

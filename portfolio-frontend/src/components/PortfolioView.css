@@ -20,7 +20,7 @@
 
 .portfolio-table th:first-child,
 .portfolio-table td:first-child {
-  text-align: left;
+  text-align: right;
   padding-left: 24px;
 }
 
@@ -123,4 +123,45 @@
 /* Optional: Add a subtle glow effect to the table */
 .portfolio-table {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-table td .asset-name {
+  justify-content: flex-end;
+}
+
+.value-positive {
+  color: #16c784 !important;
+}
+
+.value-negative {
+  color: #ea3943 !important;
+}
+
+.numeric-value {
+  text-align: right;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.total-amount {
+  text-align: right;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #888;
+  background: #111111;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.total-amount span {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.last-update {
+  text-align: right;
+  padding: 10px;
+  color: #666;
+  font-size: 0.9em;
 } 
