@@ -8,7 +8,9 @@ import java.util.Properties;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TokenObtainer {
     private static final String API_URL = "https://api.invertironline.com/token";
     private static final String CHARSET = "UTF-8";
@@ -47,7 +49,10 @@ public class TokenObtainer {
         this.password = password;
     }
 
-    public String getAccessToken() {
+    public String getAccessToken() throws IOException, JSONException {
+        if (token == null) {
+            obtainAccessToken();
+        }
         return token;
     }
 

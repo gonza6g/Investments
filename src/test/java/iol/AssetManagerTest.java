@@ -3,21 +3,35 @@ package iol;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 
+import static org.mockito.Mockito.when;
+
 public class AssetManagerTest {
+    @Mock
+    private AssetRepository assetRepository;
+
+    private AssetManager assetManager;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+        assetManager = new AssetManager(assetRepository);
+    }
+
     @Test
     public void saveAsset() throws JsonProcessingException {
         String jsonAsset = "{ \"cantidad\": 74.0000, \"comprometido\": 0.0000, \"puntosVariacion\": 164.00000000, \"variacionDiaria\": 0.78, \"ultimoPrecio\": 20944.00000000, \"ppc\": 11192.500, \"gananciaPorcentaje\": 87.12, \"gananciaDinero\": 7216.11, \"valorizado\": 15498.560000000000, \"titulo\": {  \"simbolo\": \"AL30\",  \"descripcion\": \"Bono Rep. Argentina Usd Step Up 2030\",  \"pais\": \"argentina\",  \"mercado\": \"bcba\",  \"tipo\": \"TitulosPublicos\",  \"plazo\": \"t2\",  \"moneda\": \"peso_Argentino\" }, \"parking\": null}";
-        AssetManager assetManager = new AssetManager();
         assetManager.mapAsset(jsonAsset);
     }
 
     @Test
     public void saveManyAssets() throws JsonProcessingException {
-        AssetManager assetManager = new AssetManager();
         ArrayList<Object> portfolio = getPortfolioArray();
         for (Object a : portfolio) {
             System.out.println("a = " + a);

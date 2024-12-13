@@ -12,7 +12,7 @@ public class PortfolioTest {
 
         String token = tokenObtainer.getAccessToken();
 
-        PortfolioManager portfolioManager = new PortfolioManager(token);
+        PortfolioManager portfolioManager = new PortfolioManager(tokenObtainer);
         String portfolio = portfolioManager.getPortfolio();
 
         System.out.println("portfolio = " + portfolio);

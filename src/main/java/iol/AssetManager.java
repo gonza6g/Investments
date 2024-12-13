@@ -3,59 +3,76 @@ package iol;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AssetManager {
+    private final ObjectMapper objectMapper;
+    private final AssetRepository assetRepository;
+    
+    public AssetManager(AssetRepository assetRepository) {
+        this.objectMapper = new ObjectMapper();
+        this.assetRepository = assetRepository;
+    }
+
     public void mapAsset(String jsonAsset) throws JsonProcessingException {
-        JsonNode productNode = new ObjectMapper().readTree(jsonAsset);
+        JsonNode productNode = objectMapper.readTree(jsonAsset);
+        Asset asset = createAssetFromJson(productNode);
+        assetRepository.save(asset);
+    }
 
+    private Asset createAssetFromJson(JsonNode productNode) {
         Asset asset = new Asset();
+        
+        // Numeric fields
+        asset.setCantidad(parseFloat(productNode, "cantidad"));
+        asset.setComprometido(parseFloat(productNode, "comprometido"));
+        asset.setPuntosVariacion(parseFloat(productNode, "puntosVariacion"));
+        asset.setVariacionDiaria(parseFloat(productNode, "variacionDiaria"));
+        asset.setUltimoPrecio(parseFloat(productNode, "ultimoPrecio"));
+        asset.setPpc(parseFloat(productNode, "ppc"));
+        asset.setGananciaPorcentaje(parseFloat(productNode, "gananciaPorcentaje"));
+        asset.setGananciaDinero(parseFloat(productNode, "gananciaDinero"));
+        asset.setValorizado(parseFloat(productNode, "valorizado"));
 
-        asset.setCantidad(Float.parseFloat(productNode.get("cantidad").toString()));
-        asset.setComprometido(Float.parseFloat(productNode.get("comprometido").toString()));
-        asset.setPuntosVariacion(Float.parseFloat(productNode.get("puntosVariacion").toString()));
-        asset.setVariacionDiaria(Float.parseFloat(productNode.get("variacionDiaria").toString()));
-        asset.setUltimoPrecio(Float.parseFloat(productNode.get("ultimoPrecio").toString()));
-        asset.setPpc(Float.parseFloat(productNode.get("ppc").toString()));
-        asset.setGananciaPorcentaje(Float.parseFloat(productNode.get("gananciaPorcentaje").toString()));
-        asset.setGananciaDinero(Float.parseFloat(productNode.get("gananciaDinero").toString()));
-        asset.setValorizado(Float.parseFloat(productNode.get("valorizado").toString()));
+        // String fields
+        String symbol = getStringValue(productNode.get("titulo"), "simbolo");
+        asset.setSymbol(symbol);
+        asset.setDescripcion(getStringValue(productNode.get("titulo"), "descripcion"));
+        asset.setPais(searchAssetCountry(symbol));
+        asset.setMercado(getStringValue(productNode.get("titulo"), "mercado"));
+        asset.setTipo(getStringValue(productNode.get("titulo"), "tipo"));
+        asset.setPlazo(getStringValue(productNode.get("titulo"), "plazo"));
+        asset.setMoneda(getStringValue(productNode.get("titulo"), "moneda"));
 
-        asset.setSymbol(productNode.get("titulo").get("simbolo").toString().replaceAll("\"", ""));
+        // Boolean and other fields
+        asset.setParking(productNode.get("parking").asBoolean());
+        asset.setIndustry(searchAssetIndustry(symbol));
 
-        asset.setDescripcion(productNode.get("titulo").get("descripcion").toString().replaceAll("\"", ""));
+        return asset;
+    }
 
-        asset.setPais(searchAssetCountry(asset.getSymbol()));
+    private float parseFloat(JsonNode node, String fieldName) {
+        return Float.parseFloat(node.get(fieldName).toString());
+    }
 
-        asset.setMercado(productNode.get("titulo").get("mercado").toString().replaceAll("\"", ""));
-        asset.setTipo(productNode.get("titulo").get("tipo").toString().replaceAll("\"", ""));
-        asset.setPlazo(productNode.get("titulo").get("plazo").toString().replaceAll("\"", ""));
-        asset.setMoneda(productNode.get("titulo").get("moneda").toString().replaceAll("\"", ""));
-
-        asset.setParking(Boolean.valueOf(productNode.get("parking").toString()));
-
-        asset.setIndustry(searchAssetIndustry(asset.getSymbol()));
-
-        PostgreSqlDao postgreSqlDao = new PostgreSqlDao();
-        postgreSqlDao.save(asset);
+    private String getStringValue(JsonNode node, String fieldName) {
+        return node.get(fieldName).toString().replaceAll("\"", "");
     }
 
     private String searchAssetCountry(String symbol) {
-        String country = "EMPTY";
         try {
-            country = AssetRepository.valueOf(symbol.replaceAll("\"", "")).getCountry();
+            return AssetType.valueOf(symbol).getCountry();
         } catch (IllegalArgumentException e) {
-            return country;
+            return "EMPTY";
         }
-        return country;
     }
 
     private String searchAssetIndustry(String symbol) {
-        String industry = "EMPTY";
         try {
-            industry = AssetRepository.valueOf(symbol.replaceAll("\"", "")).getIndustry();
+            return AssetType.valueOf(symbol).getIndustry();
         } catch (IllegalArgumentException e) {
-            return industry;
+            return "EMPTY";
         }
-        return industry;
     }
 }

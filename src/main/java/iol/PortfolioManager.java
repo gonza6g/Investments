@@ -5,20 +5,24 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PortfolioManager {
     private static final String API_AR_PORTFOLIO_URL = "https://api.invertironline.com/api/v2/portafolio/argentina";
     private static final String API_US_PORTFOLIO_URL = "https://api.invertironline.com/api/v2/portafolio/estados_Unidos";
-    private String accessToken;
-    public PortfolioManager(String accessToken) {
-        this.accessToken = accessToken;
+    
+    private final TokenObtainer tokenObtainer;
+
+    public PortfolioManager(TokenObtainer tokenObtainer) {
+        this.tokenObtainer = tokenObtainer;
     }
 
     public String getPortfolio() throws IOException {
         URL url = new URL(API_AR_PORTFOLIO_URL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
-        connection.setRequestProperty("Authorization", "Bearer " + accessToken);
+        connection.setRequestProperty("Authorization", "Bearer " + tokenObtainer.getAccessToken());
 
         int responseCode = connection.getResponseCode();
         if (responseCode == HttpURLConnection.HTTP_OK) {

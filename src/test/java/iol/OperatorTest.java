@@ -13,7 +13,7 @@ public class OperatorTest {
         tokenObtainer.obtainAccessToken();
         String token = tokenObtainer.getAccessToken();
 
-        PortfolioManager portfolioManager = new PortfolioManager(token);
+        PortfolioManager portfolioManager = new PortfolioManager(tokenObtainer);
         String portfolioString =  portfolioManager.getPortfolio();
 
         String market = "bCBA";
